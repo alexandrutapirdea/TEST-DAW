@@ -1,0 +1,59 @@
+﻿@model  TestLaborator.Models.Carte
+
+
+
+@using (Html.BeginForm("AdaugaCarte", "Carti", FormMethod.Post,
+    new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h3 style="font-weight: bold; color:#000000">Adauga o carte :</h3>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    // Titlu
+    <div class="form-group">
+        @Html.LabelFor(m => m.Titlu, "Titlu", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Titlu, new { @class = "form-control" })
+        </div>
+    </div>
+    // Descriere
+    <div class="form-group">
+        @Html.LabelFor(m => m.Descriere, "Descriere", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Descriere, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Editura, "Editura", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Editura, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Autor, "Autor", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Autor, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pret, "Pret", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Pret, new { @class = "form-control" })
+        </div>
+    </div>
+
+          @Html.DropDownListFor(m => m.IDLibrarie, new 
+              SelectList(Model.OptiuniLibrarii, "Value","Text"),"Alegeti o librarie", 
+              new { @class = "form-control"} ) 
+    // SubmitButton
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Adauga Carte" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

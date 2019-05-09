@@ -1,0 +1,8 @@
+﻿@model IEnumerable<TestLaborator.Models.Carte>
+<h1>Avem urmatoarele carti : </h1>
+
+
+@foreach (var carte in Model)
+{
+    @Html.Partial("_PrintCarte", carte)
+}

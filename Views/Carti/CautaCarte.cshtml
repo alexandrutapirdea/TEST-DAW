@@ -1,0 +1,16 @@
+﻿@model TestLaborator.ViewModels.SearchViewModel
+
+@using (Html.BeginForm("Search", "Carti"))
+{
+    <h2>Introdu pretul maxim</h2>
+    <div class="form-group">
+        <div class="input-group" id="search-users">
+            @Html.TextBoxFor(u => u.SearchTerm, new { @class = "form-control", placeholder = "Cauta carte" })
+        </div>
+    </div>
+}
+
+@foreach (var carte in Model.Carti)
+{
+    @Html.Partial("_PrintCarte", carte)
+}

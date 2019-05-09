@@ -1,0 +1,12 @@
+﻿@model TestLaborator.Models.Carte
+
+<p>Titlu :@Model.Titlu</p>
+<p>Descriere : @Model.Descriere</p>
+<p>Editura : @Model.Editura</p>
+<p>Pret : @Model.Pret</p>
+<p>Autor : @Model.Autor</p>
+<p>Librarie :@Model.Librarie.Denumire</p>
+<a class="btn btn-primary" href="@Url.Action("EditeazaCarte", "Carti", new { id = Model.IDCarte })">Editeaza carte</a></>
+<a class="btn btn-info" href="@Url.Action("EditeazaCarte", "Carti", new { id = Model.IDCarte  })">Editeaza carte</a></>
+<a class="btn btn-primary" href="@Url.Action("DetaliiCarte", "Carti", new { id = Model.IDCarte  })">Detalii carte</a></>
+<a class="btn btn-danger" href="@Url.Action("StergeCarte", "Carti", new { id = Model.IDCarte  })">Sterge carte</a></>
